@@ -1,0 +1,5 @@
+{
+  "name": "Xbox 360 NXE Dashboard",
+  "description": "A faithful recreation of the Xbox 360 New Xbox Experience (NXE) dashboard with simulated functionality for signing in, store browsing, and social interactions.",
+  "requestFramePermissions": []
+}

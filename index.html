@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Xbox 360 NXE</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Exo', 'sans-serif'],
+            },
+            colors: {
+              xbox: {
+                green: '#75bb3e',
+                darkGreen: '#107c10',
+                gray: '#d5d8d9',
+                darkGray: '#333333',
+              }
+            },
+            backgroundImage: {
+              'nxe-gradient': 'linear-gradient(to bottom, #d5d8d9 0%, #d5d8d9 12%, #bec0c0 35%, #babcbc 42%, #b8bbbb 53%, #c5c6c6 57%, #dcdddd 62%, #e1e1e1 65%, #dddede 68%, #d4d6d6 73%, #c2c3c3 81%, #c0c2c2 84%, #c5c7c7 88%, #cacbcb 100%)',
+            },
+            boxShadow: {
+              'tile': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255,255,255, 0.5)',
+              'tile-hover': '0 0 20px 5px rgba(255, 255, 255, 0.6), inset 0 0 0 2px white',
+              'reflection': '0px 50px 50px -10px rgba(0,0,0,0.3)'
+            },
+            animation: {
+              'shine': 'shine 1s ease-in-out infinite',
+              'fade-in': 'fadeIn 0.3s ease-out forwards',
+              'scale-up': 'scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards',
+            },
+            keyframes: {
+              shine: {
+                '0%': { left: '-100%' },
+                '100%': { left: '200%' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              scaleUp: {
+                '0%': { transform: 'scale(0.8)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        overflow: hidden;
+        user-select: none;
+      }
+      /* 3D Perspective Utilities */
+      .perspective-500 {
+        perspective: 500px;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .rotate-y-12 {
+        transform: rotateY(12deg);
+      }
+      .-rotate-y-12 {
+        transform: rotateY(-12deg);
+      }
+      .rotate-y-0 {
+        transform: rotateY(0deg);
+      }
+      
+      /* Glass Panel */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(0,0,0,0.1); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,0.2); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,0.4); 
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-200">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
